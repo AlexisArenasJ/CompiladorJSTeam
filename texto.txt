@@ -1,2 +1,5 @@
 # variable = 4+5_
 # variable2= 3_
+# jaja =32_ #ds_ 
+mostrar(variable)_
+# n1c = 3_

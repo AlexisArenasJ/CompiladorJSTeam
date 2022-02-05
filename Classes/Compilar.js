@@ -5,6 +5,7 @@ class Compilar {
         this.content;    
         this.lineas = [];
         this.lineasToJS = [];
+        this.palabrasReservadas = ['si', 'sino', 'mostrar', '#', '_', '+' , '-'];
     }
     
     //Lee el txt
@@ -42,7 +43,6 @@ class Compilar {
         let variableJS = "";
         let nombreVariable = "";
         this.lineas.map((data) => {
-
             for (let index = 0; index < data.length; index++) {
                 
                 if (data[index] != "#" && data[index] != "_"){
@@ -52,17 +52,22 @@ class Compilar {
                 if(data[index] == "#"){
                     variableJS = "let "
                 }
+
                 if(data[index] == "_") {
-                    variableJS = variableJS + nombreVariable;
-                    variableJS += ";"
+                    variableJS = variableJS + nombreVariable + ";";
                     this.lineasToJS.push(variableJS);
                     variableJS = "";
                     nombreVariable="";
                 }
             }
         }); 
-        console.log(this.lineasToJS);
+        this.ejecutarLineas();
     }
 
+    ejecutarLineas() {
+        console.log(this.lineasToJS);
+        console.log(this.lineas);
+        console.log(this.lineasToJS[0])
+    }
 
 }
