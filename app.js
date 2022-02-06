@@ -1,2 +1,2 @@
-const compilar = new Compilar("./texto.txt");
+const compilar = new Compilar("texto.txt");
 compilar.readTextFile();
