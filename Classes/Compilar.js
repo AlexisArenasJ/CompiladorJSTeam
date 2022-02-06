@@ -65,9 +65,14 @@ class Compilar {
     }
 
     ejecutarLineas() {
-        console.log(this.lineasToJS);
-        console.log(this.lineas);
-        console.log(this.lineasToJS[0])
+        console.log('---LINEAS SEPARADAS DEL TXT (la instruccion termina con un "_")----');
+        this.lineas.map(data => {
+            console.log(data);
+        })
+        console.log('---LINEAS  DEL TXT A JS ----');
+        this.lineasToJS.map(data => {
+            console.log(data);
+        })
     }
 
 }
